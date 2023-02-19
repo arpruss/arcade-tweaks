@@ -83,7 +83,7 @@ ArcadeTweak.go = function() {
         if (tweaks.options)
             options = options.concat(tweaks.options);
         if (tweaks.controller) {
-            options = options.concat('-ctrlrpath','/emulator');
+            options = options.concat('-ctrlrpath','/');
             options = options.concat('-ctrlr','/controller');
         }
         if (tweaks.config) {
@@ -93,8 +93,6 @@ ArcadeTweak.go = function() {
     else {
         console.log("No specific tweak for",ArcadeTweak.game);
     }
-
-    console.log(tweaks, (tweaks.controller || tweaks.config), ArcadeTweak);
 
     if (tweaks && (tweaks.controller || tweaks.config) && ! ArcadeTweak.BrowserFS_initialize) {
         var patched = false;
@@ -108,7 +106,7 @@ ArcadeTweak.go = function() {
               var r=ArcadeTweak.FS_mkdir(d);
               if (!patched && d=="/artwork") {
                 if (tweaks.controller)
-                    FS.writeFile('/emulator/controller.cfg',ArcadeTweak.wrap(tweaks.system,tweaks.controller));
+                    FS.writeFile('/controller.cfg',ArcadeTweak.wrap(tweaks.system,tweaks.controller));
                 if (tweaks.config)
                     FS.writeFile('/'+tweaks.system+'.cfg',ArcadeTweak.wrap(tweaks.system,tweaks.config));
                 patched = true;
