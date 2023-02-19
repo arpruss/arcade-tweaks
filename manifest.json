@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+ 
+  "name": "Arcade Tweaks",
+  "version": "0.0.1",
+  "description": "Tweak Internet Arcade games",
+  
+  "content_scripts": [{
+    "js": ["inject.js"],
+	 "matches": ["http://archive.org/*", "https://archive.org/*"]
+  }],
+  
+    "web_accessible_resources": [{
+        "resources": ["tweak.js"],
+        "matches": ["http://archive.org/*", "https://archive.org/*"]
+    }]    
+
+}
