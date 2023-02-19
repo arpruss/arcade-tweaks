@@ -66,7 +66,8 @@ ArcadeTweak.tweaks = {
         }
 }
 
-ArcadeTweak.options=['-paddle_device','mouse','-dial_device','mouse','-trackball_device','mouse','-positional_device','mouse','-lightgun_device','mouse','-keepaspect'];
+//ArcadeTweak.options=['-paddle_device','mouse','-dial_device','mouse','-trackball_device','mouse','-positional_device','mouse','-lightgun_device','mouse','-keepaspect'];
+ArcadeTweak.options=['-mouse','-keepaspect']; // always have mouse active, which also makes the mouse cursor disappear
 
 ArcadeTweak.wrap = function(system, xml) {
     return '<mameconfig version="10"><system name="'+system+'">'+xml+'</system></mameconfig>'       
